@@ -1,4 +1,4 @@
-package com.giocc;
+package com.giocc.vec;
 
 import com.giocc.vec.DoubleVector;
 import org.junit.Assert;
