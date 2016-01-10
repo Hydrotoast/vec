@@ -28,4 +28,18 @@ public class Polynomial implements Function<Double, Double>, Vector<Polynomial> 
     public Polynomial multiply(double scalar) {
         return new Polynomial(coefficients.multiply(scalar));
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Polynomial that = (Polynomial) o;
+        return coefficients != null ? coefficients.equals(that.coefficients) : that.coefficients == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return coefficients != null ? coefficients.hashCode() : 0;
+    }
 }
