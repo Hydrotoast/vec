@@ -39,9 +39,7 @@ public class DoubleVector implements Vector<DoubleVector> {
         if (o == null || getClass() != o.getClass()) return false;
 
         DoubleVector that = (DoubleVector) o;
-
         return Arrays.equals(data, that.data);
-
     }
 
     @Override
