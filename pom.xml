@@ -20,9 +20,6 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>vec-examples</module>
-    </modules>
 
     <dependencies>
         <dependency>
