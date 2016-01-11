@@ -19,6 +19,16 @@ public class Polynomial implements Function<Double, Double>, Vector<Polynomial> 
         return result;
     }
 
+    public Polynomial gradient(double x) {
+        final double[] coefficientsData = this.coefficients.getData();
+        final double[] result = new double[coefficientsData.length];
+        result[0] = 0;
+        for (int i = 1; i < coefficientsData.length; i++) {
+            result[i] = Math.pow(x, i);
+        }
+        return new Polynomial(new DoubleVector(result));
+    }
+
     @Override
     public Polynomial add(Polynomial other) {
         return new Polynomial(coefficients.add(other.coefficients));

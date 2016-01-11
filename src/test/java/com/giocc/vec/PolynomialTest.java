@@ -32,4 +32,17 @@ public class PolynomialTest {
         assertEquals(new Polynomial(new DoubleVector(new double[] {2.0, 2.0, 2.0})), zs);
         assertEquals(2.0 * 4 * 4 + 2.0 * 4 + 2.0, zs.apply(4.0), 0.1);
     }
+
+
+    @Test
+    public void testGradient() throws Exception {
+        // Given
+        final Polynomial xs = new Polynomial(new DoubleVector(new double[] {1.0, 1.0, 1.0}));
+
+        // When
+        final Polynomial zs = xs.gradient(2.0);
+
+        // Then
+        assertEquals(new Polynomial(new DoubleVector(new double[] {0.0, 2.0, 4.0})), zs);
+    }
 }
